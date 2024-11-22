@@ -229,3 +229,17 @@ const fetchRandom = (count, results = true) => {
 // window.addEventListener('DOMContentLoaded', () => {
 //     fetchRandom(10, true); // 10 random images on initial load
 // });
+
+
+
+// const populate = async () => {
+//         const random_url = `https://api.unsplash.com/photos/random?client_id=${accessKey}&count=1`;
+//         const response = await fetch(`${random_url}`);
+//         const data = await response.json();
+//         console.log(data[0].urls.full)
+
+//         let bgHero  = document.getElementById("searchBox")
+// bgHero.style.background = `url(${data[0].urls.full}) center no-repeat`
+//     }
+
+//     populate();
