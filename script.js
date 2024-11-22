@@ -140,28 +140,33 @@ document.getElementById("showMore").addEventListener("click", () => {
 
 // Showing some popular categories, user can click on it and get the results
 nature.addEventListener("click", () => {
+    document.getElementById("errors").style.display = 'none'
     page = 1;
     currentKeyword = "nature"
     searchResult(currentKeyword, true);
 })
 
 texture.addEventListener("click", () => {
+    document.getElementById("errors").style.display = 'none'
     page = 1;
     currentKeyword = "texture"
     searchResult(currentKeyword, true);
 })
 
 travel.addEventListener("click", () => {
+    document.getElementById("errors").style.display = 'none'
     page = 1;
     currentKeyword = "travel"
     searchResult(currentKeyword, true);
 })
 wallpapers.addEventListener("click", () => {
+    document.getElementById("errors").style.display = 'none'
     page = 1;
     currentKeyword = "wallpapers"
     searchResult(currentKeyword, true);
 })
 streetPhotography.addEventListener("click", () => {
+    document.getElementById("errors").style.display = 'none'
     page = 1;
     currentKeyword = "Street Photography"
     searchResult(currentKeyword, true);
