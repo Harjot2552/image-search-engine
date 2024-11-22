@@ -1,4 +1,7 @@
+// Api acces key from unsplash
 const accessKey = "84gsKGt1QFGBVu5NUS4Pyi_Y8jrxUBix25IU6PTywnY";
+
+// All important variables
 const btn = document.getElementById("btn");
 const random = document.getElementById("random");
 const orientations = document.querySelector("select[name='orientation']");
@@ -7,11 +10,17 @@ const orderBy = document.querySelector("select[name='orderBy']");
 let keyword = document.getElementById("keyword")
 const errors = document.getElementById("errors")
 
+
+// Setting the cuurent value of keyword = null
 let currentKeyword = "";
 
+
+// Default page value = 1
 let page = 1;
 
 
+
+// Main function of the page which will fetch the data from url and display th result
 const searchResult = async (userKeyword, clearResult = true) => {
     if (clearResult) {
         allOutputs.textContent = "";
@@ -19,6 +28,8 @@ const searchResult = async (userKeyword, clearResult = true) => {
     let api_url = `https://api.unsplash.com/search/photos?client_id=${accessKey}&page=${page}&query=${userKeyword}&per_page=12`;
     console.log(api_url)
 
+    
+// Adding filters to the api url
     if (orientations.value) {
         api_url += `&orientation=${orientations.value}`
     }
@@ -71,6 +82,8 @@ const searchResult = async (userKeyword, clearResult = true) => {
 
             });
         }
+        
+// If there is nothing in the requested data the webpage will showing the following
         else {
             allOutputs.textContent = ''
             document.getElementById("total").textContent = ""
@@ -83,7 +96,7 @@ const searchResult = async (userKeyword, clearResult = true) => {
             return
         }
 
-
+// Catching the error if the api is exhausted or doesn't work for any other reason
     }
     catch (error) {
         console.log("Error fetching in data", error)
@@ -94,6 +107,7 @@ const searchResult = async (userKeyword, clearResult = true) => {
 
 }
 
+// Calling the search result fucntion by adding eventlisten on the search button
 btn.addEventListener("click", (e) => {
     e.preventDefault();
     if (keyword.value === '') {
@@ -108,12 +122,16 @@ btn.addEventListener("click", (e) => {
     searchResult(currentKeyword, true);
 })
 
+
+// Show more button will increase the page number while retaining the previous results
 document.getElementById("showMore").addEventListener("click", () => {
     page++;
     console.log(page)
     searchResult(currentKeyword, false);
 })
 
+
+// Showing some popular categories, user can click on it and get the results
 nature.addEventListener("click", () => {
     page = 1;
     currentKeyword = "nature"
@@ -142,7 +160,7 @@ streetPhotography.addEventListener("click", () => {
     searchResult(currentKeyword, true);
 })
 
-
+// Showing/hidden the filter bar whenever somebody click on the filter button
 document.getElementById("filterButton").addEventListener("click", () => {
     const filters = document.getElementById("filters")
     filters.className = filters.classList.contains("hidden") ? "show" : "hidden";
@@ -151,6 +169,8 @@ document.getElementById("filterButton").addEventListener("click", () => {
 
 })
 
+
+// Showing results according to the applied filters
 color.addEventListener("change", () => {
     if (currentKeyword) {
         page = 1;
@@ -170,7 +190,7 @@ orderBy.addEventListener("change", () => {
     }
 });
 
-
+// Clearing all the filters in one go
 const clearAllFilters = () => {
     orientations.value = "";
     color.value = "";
@@ -179,13 +199,15 @@ const clearAllFilters = () => {
     searchResult(currentKeyword, true);
 }
 
+
+// calling thr clear filter fucntion here
 document.getElementById("clearFilter").addEventListener("click", () => {
     clearAllFilters();
 })
 
 
 
-
+// fetchRandom fucntion will do same like searchResult fucntion but it will give 10 random images
 const fetchRandom = (count, results = true) => {
 
     if (results) {
@@ -225,13 +247,13 @@ const fetchRandom = (count, results = true) => {
     populate();
 }
 
-
+// showing random images on every load of webpage  using the fetch random fucntion.
 // window.addEventListener('DOMContentLoaded', () => {
 //     fetchRandom(10, true); // 10 random images on initial load
 // });
 
 
-
+// showing random hero image on every load of webpage
 // const populate = async () => {
 //         const random_url = `https://api.unsplash.com/photos/random?client_id=${accessKey}&count=1`;
 //         const response = await fetch(`${random_url}`);
