@@ -21,6 +21,73 @@
         </div>
     </div>
 
+    <div class="container">
+
+
+        <div class="categories">
+            <h3>Featured:</h3>
+            <p class="category" id="nature">Nature</p>
+            <p class="category" id="texture">Texture</p>
+            <p class="category" id="travel">Travel</p>
+            <p class="category" id="wallpapers">Wallpapers</p>
+            <p class="category" id="streetPhotography">Street Photography</p>
+
+        </div>
+
+        <div class="content">
+            <div>
+                <p id="total">Free Stock Images</p>
+            </div>
+            <div class="filterSection">
+                <button class="btn " id="filterButton"><i id="filterButtonIcon"
+                        class="fa-solid fa-arrow-down-wide-short"></i>Filters</button>
+            </div>
+        </div>
+        <div class="filters hidden" id="filters">
+
+            <select name="orientation" id="orientation">
+                <option value=""> All Orientations</option>
+                <option value="landscape">Landscape</option>
+                <option value="portrait">Portrait</option>
+                <option value="squarish">Squarish</option>
+            </select>
+            <select name="color" id="color">
+                <option value="">All Colors</option>
+                <option value="black_and_white">Black and White</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="yellow">Yellow</option>
+                <option value="orange">Orange</option>
+                <option value="red">Red</option>
+                <option value="purple">Purple</option>
+                <option value="magenta">Magenta</option>
+                <option value="green">Green</option>
+                <option value="teal">Teal</option>
+                <option value="blue">Blue</option>
+            </select>
+            <select name="orderBy" id="orderBy">
+                <option value="">Order By</option>
+                <option value="latest">Latest </option>
+                <option value="relevant">Relevant </option>
+            </select>
+            <button id="clearFilter" class="btn"><i class="fa-solid fa-xmark"></i>Clear filters</button>
+
+        </div>
+
+        <div id="errors" class="errors">
+            Nothhing to show
+        </div>
+
+
+
+        <div id="allOutputs">
+        </div>
+        <button class="btn" id="showMore">Show more</button>
+        <button class="btn" id="showMoreRandom">Show more random</button>
+
+
+    </div>
+
 
     <script src="script.js"></script>
 </body>
