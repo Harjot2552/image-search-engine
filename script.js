@@ -224,3 +224,8 @@ const fetchRandom = (count, results = true) => {
 
     populate();
 }
+
+
+// window.addEventListener('DOMContentLoaded', () => {
+//     fetchRandom(10, true); // 10 random images on initial load
+// });
