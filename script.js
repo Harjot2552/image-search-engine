@@ -141,3 +141,12 @@ streetPhotography.addEventListener("click", () => {
     currentKeyword = "Street Photography"
     searchResult(currentKeyword, true);
 })
+
+
+document.getElementById("filterButton").addEventListener("click", () => {
+    const filters = document.getElementById("filters")
+    filters.className = filters.classList.contains("hidden") ? "show" : "hidden";
+
+    document.getElementById("filterButtonIcon").classList.toggle("rotate");
+
+})
