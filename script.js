@@ -93,3 +93,17 @@ const searchResult = async (userKeyword, clearResult = true) => {
     }
 
 }
+
+btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (keyword.value === '') {
+
+        document.getElementById("total").textContent = ""
+        document.getElementById("errors").style.display = 'block'
+        document.getElementById("errors").textContent = "Enter Something to Search :/";
+        return
+    }
+    page = 1;
+    currentKeyword = keyword.value;
+    searchResult(currentKeyword, true);
+})
