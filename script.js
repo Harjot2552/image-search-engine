@@ -107,3 +107,9 @@ btn.addEventListener("click", (e) => {
     currentKeyword = keyword.value;
     searchResult(currentKeyword, true);
 })
+
+document.getElementById("showMore").addEventListener("click", () => {
+    page++;
+    console.log(page)
+    searchResult(currentKeyword, false);
+})
