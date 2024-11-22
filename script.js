@@ -9,6 +9,7 @@ const color = document.querySelector("select[name='color']");
 const orderBy = document.querySelector("select[name='orderBy']");
 let keyword = document.getElementById("keyword")
 const errors = document.getElementById("errors")
+const loading = document.getElementById("loading")
 
 
 // Setting the cuurent value of keyword = null
@@ -18,10 +19,12 @@ let currentKeyword = "";
 // Default page value = 1
 let page = 1;
 
-
+loading.style.display = "none"
 
 // Main function of the page which will fetch the data from url and display th result
 const searchResult = async (userKeyword, clearResult = true) => {
+
+    loading.style.display = "block"
     if (clearResult) {
         allOutputs.textContent = "";
     }
@@ -39,6 +42,8 @@ const searchResult = async (userKeyword, clearResult = true) => {
     if (orderBy.value) {
         api_url += `&order_by=${orderBy.value}`
     }
+
+    
 
     try {
         const response = await fetch(api_url);
@@ -68,7 +73,6 @@ const searchResult = async (userKeyword, clearResult = true) => {
                 allOutputs.appendChild(imageContainer)
                 document.getElementById("errors").style.display = 'none'
                 document.getElementById("filterButton").style.display = "block"
-
                 document.getElementById("total").style.visibility = "visible"
                 if (data.total_pages >= 1000) {
 
@@ -78,7 +82,8 @@ const searchResult = async (userKeyword, clearResult = true) => {
                     total.textContent = `Showing results for \"${currentKeyword}\"  (${page} out of ${data.total_pages} pages)`
                 }
                 document.getElementById("showMore").style.display = "block"
-
+                
+loading.style.display = "none"
 
             });
         }
