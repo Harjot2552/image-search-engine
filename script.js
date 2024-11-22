@@ -113,3 +113,31 @@ document.getElementById("showMore").addEventListener("click", () => {
     console.log(page)
     searchResult(currentKeyword, false);
 })
+
+nature.addEventListener("click", () => {
+    page = 1;
+    currentKeyword = "nature"
+    searchResult(currentKeyword, true);
+})
+
+texture.addEventListener("click", () => {
+    page = 1;
+    currentKeyword = "texture"
+    searchResult(currentKeyword, true);
+})
+
+travel.addEventListener("click", () => {
+    page = 1;
+    currentKeyword = "travel"
+    searchResult(currentKeyword, true);
+})
+wallpapers.addEventListener("click", () => {
+    page = 1;
+    currentKeyword = "wallpapers"
+    searchResult(currentKeyword, true);
+})
+streetPhotography.addEventListener("click", () => {
+    page = 1;
+    currentKeyword = "Street Photography"
+    searchResult(currentKeyword, true);
+})
