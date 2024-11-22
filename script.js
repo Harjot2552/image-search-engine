@@ -182,3 +182,45 @@ const clearAllFilters = () => {
 document.getElementById("clearFilter").addEventListener("click", () => {
     clearAllFilters();
 })
+
+
+
+
+const fetchRandom = (count, results = true) => {
+
+    if (results) {
+        allOutputs.textContent = "";
+    }
+    const random_url = `https://api.unsplash.com/photos/random?client_id=${accessKey}&count=${count}`;
+    const populate = async () => {
+        const response = await fetch(`${random_url}`);
+        const data = await response.json();
+        console.log(data)
+        data.map((image => {
+
+            const allOutputs = document.getElementById("allOutputs")
+            const imageContainer = document.createElement("div")
+            imageContainer.classList.add("imageContainer")
+
+            const img = document.createElement("img")
+            const info = document.createElement("span")
+            const imageLink = document.createElement("a")
+            imageLink.href = image.links.html;
+            imageLink.target = "_blank";
+
+            img.src = image.urls.small;
+            info.textContent = `${image.description || 'No description'} ${image.created_at}`;
+            info.classList.add("hide")
+            info.classList.add("info")
+            imageLink.appendChild(img)
+            imageContainer.appendChild(imageLink)
+            imageContainer.appendChild(info)
+            allOutputs.appendChild(imageContainer)
+        }))
+
+        document.getElementById("showMoreRandom").style.display = "block"
+
+    }
+
+    populate();
+}
