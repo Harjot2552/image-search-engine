@@ -150,3 +150,22 @@ document.getElementById("filterButton").addEventListener("click", () => {
     document.getElementById("filterButtonIcon").classList.toggle("rotate");
 
 })
+
+color.addEventListener("change", () => {
+    if (currentKeyword) {
+        page = 1;
+        searchResult(currentKeyword, true);
+    }
+});
+orientations.addEventListener("change", () => {
+    if (currentKeyword) {
+        page = 1;
+        searchResult(currentKeyword, true);
+    }
+});
+orderBy.addEventListener("change", () => {
+    if (currentKeyword) {
+        page = 1;
+        searchResult(currentKeyword, true);
+    }
+});
