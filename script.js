@@ -169,3 +169,16 @@ orderBy.addEventListener("change", () => {
         searchResult(currentKeyword, true);
     }
 });
+
+
+const clearAllFilters = () => {
+    orientations.value = "";
+    color.value = "";
+    orderBy.value = "";
+    page = 1;
+    searchResult(currentKeyword, true);
+}
+
+document.getElementById("clearFilter").addEventListener("click", () => {
+    clearAllFilters();
+})
