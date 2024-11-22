@@ -90,6 +90,7 @@ loading.style.display = "none"
         
 // If there is nothing in the requested data the webpage will showing the following
         else {
+            loading.style.display = "none"
             allOutputs.textContent = ''
             document.getElementById("total").textContent = ""
             document.getElementById("errors").style.display = 'block'
@@ -104,6 +105,7 @@ loading.style.display = "none"
 // Catching the error if the api is exhausted or doesn't work for any other reason
     }
     catch (error) {
+        loading.style.display = "none"
         console.log("Error fetching in data", error)
         document.getElementById("total").textContent = ""
         document.getElementById("errors").style.display = 'block'

@@ -74,7 +74,7 @@
     /* background: rgba(128, 128, 128, 0.139); */
     background: rgba(255, 255, 255, 0.785);
     font-size: 18px;
-    color: #fff;
+    color: #000000;
     padding: 0 30px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
@@ -336,6 +336,7 @@ option:disabled {
 }
 
 #loading{
+    display: none;
     margin-top: 2%;
     width: 70px;
     height: 70px;
