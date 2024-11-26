@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
+:root{
+    --primary-color: #ffff;
+    --secondary-color: #000;
+    --search-box-input-background: rgba(255, 255, 255, 0.785);
+    --placeholder-color:  rgba(0, 0, 0, 0.637);
+    --select-box-color: rgba(128, 128, 128, 0.139);
+}
+
+.dark-mode{
+    
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -45,7 +57,7 @@
 .main-heading {
     font-size: 1.5rem;
     margin: 30px auto;
-    color: white;
+    color: var(--primary-color);
     width: 90%;
     text-align: center;
 
@@ -72,7 +84,7 @@
     flex: 1;
     height: 100%;
     /* background: rgba(128, 128, 128, 0.139); */
-    background: rgba(255, 255, 255, 0.785);
+    background: var(--search-box-input-background);
     font-size: 18px;
     color: #000000;
     padding: 0 30px;
@@ -84,7 +96,7 @@
 ::placeholder {
     font-size: 16px;
     /* color: rgba(255, 255, 255, 0.637); */
-    color: rgba(0, 0, 0, 0.637);
+    color: var(--placeholder-color);
 }
 
 .random {
@@ -100,8 +112,8 @@
     border: 0;
     outline: 0;
     padding: 14px 23px;
-    background-color: black;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     border-radius: 30px;
     font-size: 14px;
     cursor: pointer;
@@ -178,8 +190,8 @@
     border: 0;
     outline: 0;
     padding: 14px 29px;
-    background-color: black;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     border-radius: 8px;
     font-size: 17px;
     cursor: pointer;
@@ -198,8 +210,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+    background-color: var(--placeholder-color);
+    color: var(--primary-color);
     padding: 10px;
     text-align: center;
     opacity: 0;
@@ -222,7 +234,7 @@
 }
 
 .category {
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--secondary-color);
     cursor: pointer;
     display: inline-block;
 }
@@ -271,7 +283,7 @@
 }
 
 label {
-    color: white;
+    color: var(--primary-color);
 }
 
 .errors {
@@ -286,11 +298,11 @@ label {
 select {
     width: 26%;
     padding: 14px 29px;
-    border: 2px solid rgba(128, 128, 128, 0.139);
+    border: 2px solid var(--select-box-color);
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.139);
+    background-color: var(--select-box-color);
     font-size: 17px;
-    color: rgba(0, 0, 0, 0.637);
+    color: var(--select-box-color);
     cursor: pointer;
     margin: 10px;
     outline: none;
@@ -304,30 +316,30 @@ select {
 select::after {
     content: '▼';
     font-size: 12px;
-    color: #000000;
+    color: var(--secondary-color);
     position: absolute;
     right: 15px;
     pointer-events: none;
 }
 
 select:hover {
-    border-color: rgba(128, 128, 128, 0.139);
+    border-color: var(--select-box-color);
     background-color: transparent;
 }
 
 
 option {
     padding: 8px;
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--secondary-color);
+    color: var(--secondary-color);
     border-bottom: 1px solid #e0e0e0;
     cursor: pointer;
 }
 
 
 select option:hover {
-    background-color: #000000 !important;
-    color: #ffffff !important;
+    background-color: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
 }
 
 option:disabled {
