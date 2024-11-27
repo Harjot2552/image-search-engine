@@ -5,11 +5,20 @@
     --secondary-color: #000;
     --search-box-input-background: rgba(255, 255, 255, 0.785);
     --placeholder-color:  rgba(0, 0, 0, 0.637);
-    --select-box-color: rgba(128, 128, 128, 0.139);
+    --select-box-color: rgba(0, 0, 0, 0.637);
+}
+
+body{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .dark-mode{
-    
+    --primary-color: #222831;
+    --secondary-color: #fff;
+    --search-box-input-background: rgba(0, 0, 0, 0.637);
+    --placeholder-color:  rgba(255, 255, 255, 0.785);
+    --select-box-color: #fff;
 }
 
 * {
@@ -19,6 +28,15 @@
     font-family: "Ubuntu", sans-serif;
 }
 
+.navbar{
+    position: absolute;
+    top: 11px;
+    right: 11px;
+}
+
+#darkMode{
+
+}
 
 .searchBox {
     display: flex;
@@ -57,7 +75,7 @@
 .main-heading {
     font-size: 1.5rem;
     margin: 30px auto;
-    color: var(--primary-color);
+    color: #fff;
     width: 90%;
     text-align: center;
 
@@ -300,9 +318,9 @@ select {
     padding: 14px 29px;
     border: 2px solid var(--select-box-color);
     border-radius: 8px;
-    background-color: var(--select-box-color);
+    background-color: var(--secondary-color);
     font-size: 17px;
-    color: var(--select-box-color);
+    color: var(--primary-color);
     cursor: pointer;
     margin: 10px;
     outline: none;
@@ -324,13 +342,16 @@ select::after {
 
 select:hover {
     border-color: var(--select-box-color);
+    color: var();
     background-color: transparent;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 
 option {
     padding: 8px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     color: var(--secondary-color);
     border-bottom: 1px solid #e0e0e0;
     cursor: pointer;
@@ -343,8 +364,8 @@ select option:hover {
 }
 
 option:disabled {
-    color: #999;
-    background-color: #f5f5f5;
+    color: var(--select-box-color);
+    background-color: var(--select-box-color);
 }
 
 #loading{

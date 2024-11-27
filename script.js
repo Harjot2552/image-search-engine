@@ -276,6 +276,21 @@ const fetchRandom = (count, results = true) => {
 // bgHero.style.background = `url(${data[0].urls.full}) center no-repeat`
 //     }
 
-//     populate();
+ 
+    
+//       populate();
 
 
+
+
+document.getElementById("darkMode").addEventListener("click", ()=>{
+    console.log("clicked")
+    document.body.classList.toggle("dark-mode");
+
+    if(document.body.classList.contains("dark-mode")){
+        document.getElementById("darkModeIcon").classList.remove("fa-moon")
+        document.getElementById("darkModeIcon").classList.add("fa-sun")
+    }else{
+        document.getElementById("darkModeIcon").classList.add("fa-moon")
+    }
+})
