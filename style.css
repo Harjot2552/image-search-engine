@@ -34,8 +34,8 @@ body{
     right: 11px;
 }
 
-#darkMode{
-
+#darkModeIcon{
+    margin-right: 4px;
 }
 
 .searchBox {
@@ -318,9 +318,9 @@ select {
     padding: 14px 29px;
     border: 2px solid var(--select-box-color);
     border-radius: 8px;
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
     font-size: 17px;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     cursor: pointer;
     margin: 10px;
     outline: none;

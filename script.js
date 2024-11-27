@@ -31,8 +31,8 @@ const searchResult = async (userKeyword, clearResult = true) => {
     let api_url = `https://api.unsplash.com/search/photos?client_id=${accessKey}&page=${page}&query=${userKeyword}&per_page=12`;
     console.log(api_url)
 
-    
-// Adding filters to the api url
+
+    // Adding filters to the api url
     if (orientations.value) {
         api_url += `&orientation=${orientations.value}`
     }
@@ -43,7 +43,7 @@ const searchResult = async (userKeyword, clearResult = true) => {
         api_url += `&order_by=${orderBy.value}`
     }
 
-    
+
 
     try {
         const response = await fetch(api_url);
@@ -82,13 +82,13 @@ const searchResult = async (userKeyword, clearResult = true) => {
                     total.textContent = `Showing results for \"${currentKeyword}\"  (${page} out of ${data.total_pages} pages)`
                 }
                 document.getElementById("showMore").style.display = "block"
-                
-loading.style.display = "none"
+
+                loading.style.display = "none"
 
             });
         }
-        
-// If there is nothing in the requested data the webpage will showing the following
+
+        // If there is nothing in the requested data the webpage will showing the following
         else {
             loading.style.display = "none"
             allOutputs.textContent = ''
@@ -102,7 +102,7 @@ loading.style.display = "none"
             return
         }
 
-// Catching the error if the api is exhausted or doesn't work for any other reason
+        // Catching the error if the api is exhausted or doesn't work for any other reason
     }
     catch (error) {
         loading.style.display = "none"
@@ -276,21 +276,23 @@ const fetchRandom = (count, results = true) => {
 // bgHero.style.background = `url(${data[0].urls.full}) center no-repeat`
 //     }
 
- 
-    
+
+
 //       populate();
 
 
 
 
-document.getElementById("darkMode").addEventListener("click", ()=>{
+document.getElementById("darkMode").addEventListener("click", () => {
     console.log("clicked")
     document.body.classList.toggle("dark-mode");
 
-    if(document.body.classList.contains("dark-mode")){
+    if (document.body.classList.contains("dark-mode")) {
+        document.getElementById("darkMode").innerHTML = `<i id="darkModeIcon" class="fa-solid fa-moon"></i> Light Mode`
         document.getElementById("darkModeIcon").classList.remove("fa-moon")
         document.getElementById("darkModeIcon").classList.add("fa-sun")
-    }else{
+    } else {
         document.getElementById("darkModeIcon").classList.add("fa-moon")
+          document.getElementById("darkMode").innerHTML = `<i id="darkModeIcon" class="fa-solid fa-moon"></i> Dark Mode`
     }
 })
