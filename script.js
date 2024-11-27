@@ -118,7 +118,11 @@ const searchResult = async (userKeyword, clearResult = true) => {
 btn.addEventListener("click", (e) => {
     e.preventDefault();
     if (keyword.value === '') {
-
+        allOutputs.innerHTML = "";
+        
+        document.getElementById("filterButton").style.display = 'none'
+        document.getElementById("filters").style.display = 'none'
+          document.getElementById("showMore").style.display = 'none'
         document.getElementById("total").textContent = ""
         document.getElementById("errors").style.display = 'block'
         document.getElementById("errors").textContent = "Enter Something to Search :/";
@@ -293,6 +297,6 @@ document.getElementById("darkMode").addEventListener("click", () => {
         document.getElementById("darkModeIcon").classList.add("fa-sun")
     } else {
         document.getElementById("darkModeIcon").classList.add("fa-moon")
-          document.getElementById("darkMode").innerHTML = `<i id="darkModeIcon" class="fa-solid fa-moon"></i> Dark Mode`
+        document.getElementById("darkMode").innerHTML = `<i id="darkModeIcon" class="fa-solid fa-moon"></i> Dark Mode`
     }
 })

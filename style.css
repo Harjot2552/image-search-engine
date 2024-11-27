@@ -14,7 +14,7 @@ body{
 }
 
 .dark-mode{
-    --primary-color: #222831;
+    --primary-color: #1d2126;
     --secondary-color: #fff;
     --search-box-input-background: rgba(0, 0, 0, 0.637);
     --placeholder-color:  rgba(255, 255, 255, 0.785);
