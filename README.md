@@ -20,7 +20,8 @@ The project was built with user experience in mind, ensuring smooth functionalit
 - **Filters:** Narrow down your results by selecting options like color, orientation, and sort order.  
 - **Random Images:** Display 10 random images instantly and load more with a click.  
 - **Responsive Design:** Works perfectly across devices of all sizes.  
-- **Dynamic Updates:** Real-time image updates when filters are changed without needing to reload.  
+- **Dynamic Updates:** Real-time image updates when filters are changed without needing to reload.
+- - **Dark Mode:** Toggle between Light and Dark modes for a personalized experience. 🌙 
 
 ---
 
