@@ -28,9 +28,8 @@ The project was built with user experience in mind, ensuring smooth functionalit
 ## 💡 **How to Use**  
 1. **Search Images:** Type a keyword in the search bar and press "Search."  
 2. **Apply Filters:** Choose options from the dropdown menus to refine your search.  
-3. **Explore Random Images:** Click the "Random" button to view a collection of random images.  
-4. **See More Results:** Click "Show More" to load additional images.  
-5. **Interactive Elements:** Filters automatically refresh results without needing to press a button again!  
+3. **See More Results:** Click "Show More" to load additional images.  
+4. **Interactive Elements:** Filters automatically refresh results without needing to press a button again!  
 
 ---
 
