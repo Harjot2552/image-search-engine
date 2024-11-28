@@ -44,4 +44,4 @@ The project was built with user experience in mind, ensuring smooth functionalit
 ## 🚀 **Getting Started**  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/unsplash-image-explorer.git
+   git clone https://github.com/Harjot2552/mult213-a1.git
